@@ -14,24 +14,24 @@ public class Incidencia {
     private static AtomicInteger counter = new AtomicInteger(initialValue:100);
     private int id;
 
-    @NotNull(message = "el estado debe ser ingresado");
-    @NotBlank(message = "el estado no puede estar vacio");
+    @NotNull(message = "el estado debe ser ingresado")
+    @NotBlank(message = "el estado no puede estar vacio")
     private String estado;
 
-    @NotNull(message = "debe haber una breve descripcion");
-    @NotBlank(message = "la descripcion no puede estar vacia");
+    @NotNull(message = "debe haber una breve descripcion")
+    @NotBlank(message = "la descripcion no puede estar vacia")
     private String descripcion;
 
     @NotNull(message = "debe tener un nivel de prioridad");
-    @NotBlank(message = "el nivel de prioridad no puede estar vacio");
+    @NotBlank(message = "el nivel de prioridad no puede estar vacio")
     private int nivelPrioridad;
 
-    @NotNull(message = "el usuario es obligatorio");
-    @NotBlank(message = "el usuario no puede estar vacio");
+    @NotNull(message = "el usuario es obligatorio")
+    @NotBlank(message = "el usuario no puede estar vacio")
     private String usuario;
 
-    @NotNull(message = "el usuario es obligatorio");
-    @NotBlank(message = "el usuario no puede estar vacio");
+    @NotNull(message = "el usuario es obligatorio")
+    @NotBlank(message = "el usuario no puede estar vacio")
     private LocalDateTime fecha;
 
     public Incidencia(String estado, String descripcion, int nivelPrioridad, String usuario, LocalDateTime fecha){
