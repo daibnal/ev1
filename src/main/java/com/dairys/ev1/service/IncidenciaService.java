@@ -18,11 +18,21 @@ public class IncidenciaService {
         return incidenciaRepository.agregarIncidencia(i);
     }
 
+    public Incidencia buscarIncidencia(int id){
+        return incidenciaRepository.encontrarIncidencia(id);
+    }
+
     public String encontrarUsuario(int id){
         return incidenciaRepository.buscarUsuario(id);
     }
 
+    public String eliminarIncidencia(int id){
+        return incidenciaRepository.quitarIncidencia(id);
+    }
 
+    public Incidencia actualizarIncidencia(int id, Incidencia incidenciaCambiada){
+        return incidenciaRepository.cambiarIncidencia(id, incidenciaCambiada);
+    }
 
 
 }

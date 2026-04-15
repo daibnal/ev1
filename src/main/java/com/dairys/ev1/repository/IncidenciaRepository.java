@@ -19,7 +19,16 @@ public class IncidenciaRepository {
         return i;
     }
 
-    public Incidencia buscarUsuario(int id){
+    public Incidencia encontrarIncidencia(int id){
+        for(Incidencia incidencia : listIncidencias){
+            if(incidencia.getId() == id){
+                return incidencia;
+            }
+        }
+        return null;
+    }
+
+    public String buscarUsuario(int id){
         for(Incidencia incidencia : listIncidencias){
             if(incidencia.getId() == id){
                 return "El usuario de la incidencia es: " + incidencia.getUsuario();
@@ -27,4 +36,29 @@ public class IncidenciaRepository {
         }
         return "Incidencia no encontrada";
     }
+
+    public Incidencia cambiarIncidencia(int id, Incidencia incidenciaCambiada){
+        for(Incidencia incidencia : listIncidencias){
+            if(incidencia.getId() == id){
+            incidencia.setEstado(incidenciaCambiada.getEstado());
+            incidencia.setDescripcion(incidenciaCambiada.getDescripcion());
+            incidencia.setNivelPrioridad(incidenciaCambiada.getNivelPrioridad());
+            incidencia.setUsuario(incidenciaCambiada.getUsuario());
+            incidencia.setFecha(incidenciaCambiada.getFecha());
+            return incidenciaCambiada;
+            }
+        }
+        return null;
+    }
+
+    public String quitarIncidencia(int id){
+        for(Incidencia incidencia : listIncidencias){
+            if(incidencia.getId() == id){
+                listIncidencias.remove(incidencia);
+                return "Incidencia cambiada";
+            }
+        }
+        return("incidencia no encontrada");
+    }
+
 }
