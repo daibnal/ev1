@@ -1,5 +1,6 @@
 package com.dairys.ev1.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -11,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Incidencia {
-    private static AtomicInteger counter = new AtomicInteger(initialValue:100);
+    private static AtomicInteger counter = new AtomicInteger(1);
     private int id;
 
     @NotNull(message = "el estado debe ser ingresado")
@@ -32,9 +33,9 @@ public class Incidencia {
 
     @NotNull(message = "el usuario es obligatorio")
     @NotBlank(message = "el usuario no puede estar vacio")
-    private LocalDateTime fecha;
+    private LocalDate fecha;
 
-    public Incidencia(String estado, String descripcion, int nivelPrioridad, String usuario, LocalDateTime fecha){
+    public Incidencia(String estado, String descripcion, int nivelPrioridad, String usuario, LocalDate fecha){
         this.id = counter.getAndIncrement();
         this.estado = estado;
         this.descripcion = descripcion;
